@@ -1,0 +1,88 @@
+//*вложенность
+//*Шаблон %
+body{
+	display: flex;
+	align-items: center;
+	align-items: center;
+	flex-direction: column;
+}
+/*%tplborder{ //! так же можно подкл. через точку .tplborder
+font-size: 20px;
+border-bottom: 5px dashed black;
+}
+//*миксины 
+@mixin  fontz ($f,$c,$w){
+	font-size: $f;
+	color: $c;
+	font-weight: $w;
+}
+.container {
+	padding: 0;
+	margin: 0 auto;
+	width: 300px / 960px *100%; //! calc() , где 960px- контентная часть макета, а 300px - размер блока.
+	background-color: #811600;
+	text-align: center;
+	border-radius: 0.5rem;
+	&.container--main {
+		background-color: lightblue;
+	}
+	> p {
+		color: greenyellow;
+	}
+	span {
+		color: white;
+	}
+	&--main {
+		@include fontz (100px,orange,900);
+		padding: 30px;}
+	}
+
+		.link {
+			font-size: 30px;
+			font-weight: 900;
+			margin-bottom: 10px;
+			display: block;
+			.container &{//! обращение к link в классе container из 
+				font-size: 36px;
+				color: red;
+			}
+			&:hover {
+				//!так же подключаются и псевдоклассы и псевдо элементы.
+				text-decoration: none;
+				color: green;
+				transition: 0.5s;
+			}
+			@extend %tplborder;
+		}
+		
+	.link2{
+		@extend %tplborder;
+		font-size: 25px;
+	}*/
+		
+//todo CALC FUNTION
+.calc {
+	position: relative;
+	width: 1000px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0 , 0, .5);
+	
+.box {
+	position: relative;
+	min-width: calc(calc(1000px / 5) - 20px);
+	height: calc(100% - 20px);
+	background-color: black;
+	margin: 10px;
+	
+}
+}
+.calc2{
+	position: relative;
+	min-width: calc(200px * 5);
+	height: 200px;
+	background-color: blue;
+	margin: 10px 0;
+}
